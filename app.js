@@ -25,6 +25,7 @@ app.engine('.hbs', engine({
   }
 }));
 app.set('view engine', 'hbs');
+app.set('views', __dirname + '/views');
 app.get('/', (req, res)=> {
 res.render('index', { title: 'Express',
     studentName:'Tarhembe Daniel',
