@@ -1,0 +1,33 @@
+<h1>{{title}}</h1>
+<p>Total Properties: {{count}}</p>
+
+<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+  <thead style="background-color: #ff5a5f; color: white;">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Host Name</th>
+      <th>Neighbourhood</th>
+      <th>Country</th>
+      <th>Price</th>
+      <th>Room Type</th>
+      <th>Minimum Nights</th>
+      <th>Service Fee</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each listings}}
+      <tr {{#if (isEmptyServiceFee this.[service fee])}}style="background-color:#fff3cd;"{{/if}}>
+        <td>{{this.id}}</td>
+        <td>{{this.NAME}}</td>
+        <td>{{this.[host name]}}</td>
+        <td>{{this.neighbourhood}}</td>
+        <td>{{this.country}}</td>
+        <td>{{this.price}}</td>
+        <td>{{this.[room type]}}</td>
+        <td>{{this.[minimum nights]}}</td>
+        <td>{{formatServiceFee this.[service fee]}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

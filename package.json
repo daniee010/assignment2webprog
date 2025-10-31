@@ -1,0 +1,16 @@
+{
+  "name": "asn2-tarhembedaniel",
+  "version": "1.0.0",
+  "description": "Assignment two",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tarhembe Daniel",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "express-handlebars": "^8.0.3",
+    "express-validator": "^7.3.0"
+  }
+}

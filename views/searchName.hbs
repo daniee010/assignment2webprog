@@ -1,0 +1,28 @@
+<h1>{{title}}</h1>
+
+<form method="get" action="/search/name">
+  <label for="name">Property Name:</label>
+  <input type="text" name="name" id="name" value="{{searchName}}" placeholder="e.g., Cozy Loft" required>
+  <button type="submit">Search</button>
+</form>
+
+{{#if errorMessage}}
+  <div class="error-message">{{errorMessage}}</div>
+{{/if}}
+
+{{#if results}}
+  <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px;">
+   {{#each results}}
+  <div style="border:1px solid #ccc; padding:15px; width:300px; border-radius:8px; background:#f9f9f9;">
+    {{#if this.thumbnail}}
+      <img src="{{this.thumbnail}}" alt="{{this.NAME}}" style="width:100%; height:200px; object-fit:cover; border-radius:6px;">
+    {{/if}}
+    <h3>{{this.NAME}}</h3>
+    <p><strong>Host:</strong> {{this.[host name]}}</p>
+    <p><strong>Neighbourhood:</strong> {{this.neighbourhood}}</p>
+    <p><strong>Country:</strong> {{this.country}}</p>
+    <p><strong>Price:</strong> {{this.price}}</p>
+  </div>
+{{/each}}
+y  </div>
+{{/if}}

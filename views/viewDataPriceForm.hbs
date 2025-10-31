@@ -1,0 +1,17 @@
+<h1>{{title}}</h1>
+
+{{#if errorMessage}}
+  <div class="error-message">{{errorMessage}}</div>
+{{/if}}
+
+<form method="get" action="/viewData/price">
+  <label for="min">Minimum Price:</label>
+  <input type="text" name="min" id="min" value="{{min}}" placeholder="e.g., 100" required>
+  <br><br>
+
+  <label for="max">Maximum Price:</label>
+  <input type="text" name="max" id="max" value="{{max}}" placeholder="e.g., 1000" required>
+  <br><br>
+
+  <button type="submit">Filter</button>
+</form>

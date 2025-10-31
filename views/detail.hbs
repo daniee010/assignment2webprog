@@ -1,0 +1,30 @@
+<h1>{{title}}</h1>
+
+{{#if listing}}
+  <div class="listing-card">
+    <div class="summary-block">
+      <h2>{{listing.name}}</h2>
+      <p><strong>ID:</strong> {{listing.id}}</p>
+      <p><strong>Property Type:</strong> {{listing.property_type}}</p>
+      <p><strong>Price:</strong> {{listing.price}}</p>
+      <p><strong>Location:</strong> {{listing.smart_location}}</p>
+    </div>
+
+    {{#if listing.picture_url}}
+      <img src="{{listing.picture_url}}" alt="{{listing.name}}" style="max-width:400px; border-radius:8px;">
+    {{/if}}
+
+    <div class="info-grid">
+      <div class="info-box"><i class="icon fas fa-user-friends"></i> Guests: {{listing.accommodates}}</div>
+      <div class="info-box"><i class="icon fas fa-bed"></i> Bedrooms: {{listing.bedrooms}}</div>
+      <div class="info-box"><i class="icon fas fa-bath"></i> Bathrooms: {{listing.bathrooms}}</div>
+      <div class="info-box"><i class="icon fas fa-star"></i> Rating: {{listing.review_scores_rating}}</div>
+    </div>
+  </div>
+{{else}}
+  <div class="error-message">
+    No listing found for this index.
+  </div>
+{{/if}}
+
+<a href="/data">← Back to all listings</a>

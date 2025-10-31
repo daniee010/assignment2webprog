@@ -1,0 +1,29 @@
+<h1>{{title}}</h1>
+
+<form method="get" action="/search/id">
+  <label for="id">Property ID:</label>
+  <input type="text" name="id" id="id" value="{{searchId}}" placeholder="e.g., 2515" required>
+  <button type="submit">Search</button>
+</form>
+
+{{#if errorMessage}}
+  <div class="error-message">{{errorMessage}}</div>
+{{/if}}
+
+{{#if property}}
+  <div style="border: 1px solid #ff5a5f; padding: 20px; border-radius: 8px; background: #fafafa; margin-top: 30px;">
+    <h2>Property Details</h2>
+
+    {{#if property.thumbnail}}
+      <img src="{{property.thumbnail}}" alt="{{property.NAME}}" style="width:300px; border-radius:8px; margin-bottom:15px;">
+    {{/if}}
+
+    <p><strong>ID:</strong> {{property.id}}</p>
+    <p><strong>Name:</strong> {{property.NAME}}</p>
+    <p><strong>Host Name:</strong> {{property.[host name]}}</p>
+    <p><strong>Neighbourhood:</strong> {{property.neighbourhood}}</p>
+    <p><strong>Country:</strong> {{property.country}}</p>
+    <p><strong>Price:</strong> {{property.price}}</p>
+    <p><strong>Room Type:</strong> {{property.[room type]}}</p>
+  </div>
+{{/if}}
